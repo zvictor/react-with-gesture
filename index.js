@@ -97,12 +97,12 @@ function handlers(set, props = {}, args) {
 
   const onDown = e => {
     if (props.mouse) {
-      window.addEventListener(mouseMove, handleMove, props.passive)
-      window.addEventListener(mouseUp, onUp, props.passive)
+      document.documentElement.addEventListener(mouseMove, handleMove, props.passive)
+      document.documentElement.addEventListener(mouseUp, onUp, props.passive)
     }
     if (props.touch) {
-      window.addEventListener(touchMove, handleMove, props.passive)
-      window.addEventListener(touchEnd, onUp, props.passive)
+      document.documentElement.addEventListener(touchMove, handleMove, props.passive)
+      document.documentElement.addEventListener(touchEnd, onUp, props.passive)
     }
 
     handleDown(e)
@@ -110,12 +110,12 @@ function handlers(set, props = {}, args) {
 
   const stop = () => {
     if (props.mouse) {
-      window.removeEventListener(mouseMove, handleMove, props.passive)
-      window.removeEventListener(mouseUp, onUp, props.passive)
+      document.documentElement.removeEventListener(mouseMove, handleMove, props.passive)
+      document.documentElement.removeEventListener(mouseUp, onUp, props.passive)
     }
     if (props.touch) {
-      window.removeEventListener(touchMove, handleMove, props.passive)
-      window.removeEventListener(touchEnd, onUp, props.passive)
+      document.documentElement.removeEventListener(touchMove, handleMove, props.passive)
+      document.documentElement.removeEventListener(touchEnd, onUp, props.passive)
     }
   }
 
